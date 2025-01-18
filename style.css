@@ -1,0 +1,155 @@
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  margin: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+#pin-pad {
+  margin: 20px 0;
+}
+
+input {
+  width: calc(100% - 2rem);
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Success state (green checkmark) */
+input.success {
+  background: rgba(76, 175, 80, 0.2); /* Green background */
+  color: #4caf50; /* Green text */
+}
+
+input.success::after {
+  content: '✓';
+  position: absolute;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: #4caf50;
+}
+
+/* Failure state (red X) */
+input.failure {
+  background: rgba(255, 107, 107, 0.2); /* Red background */
+  color: #ff6b6b; /* Red text */
+}
+
+input.failure::after {
+  content: '✗';
+  position: absolute;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: #ff6b6b;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+button {
+  padding: 1.5rem;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#message {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #ff6b6b;
+}
+
+.log {
+  margin-top: 1.5rem;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 12px;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  text-align: left;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.log div {
+  margin-bottom: 0.5rem;
+}
+
+.log div:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
