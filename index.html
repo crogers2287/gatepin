@@ -45,7 +45,7 @@
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
-      // Show install prompt
+      // Show install prompt after 3 seconds
       setTimeout(() => {
         if (deferredPrompt) {
           deferredPrompt.prompt();
@@ -58,7 +58,7 @@
             deferredPrompt = null;
           });
         }
-      }, 3000); // Show prompt after 3 seconds
+      }, 3000);
     });
   </script>
 </body>
